@@ -8,6 +8,14 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     libjansson4 \
     libjansson-dev \
+    gcc \
+    make \
+    libstdc++-6-dev \
+    libssl-dev \
+    libmariadbclient18 \
+    libmariadbd-dev \
+    librabbitmq-dev \
+    librdkafka-dev \
     curl \
     unzip \
     libpcap-dev \
@@ -26,7 +34,7 @@ RUN mkdir /etc/pmacct
 
 RUN cd pmacct-master && \
     ./autogen.sh && \
-    ./configure --enable-jansson && \
+    ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --enable-rabbitmq --enable-mysql --enable-ipv6 --enable-l2 --enable-debug --enable-plabel --enable-64bit --enable-threads --enable-jansson \
     make && \
     make install
 
