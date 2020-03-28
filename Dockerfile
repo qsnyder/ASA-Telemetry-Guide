@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     libjansson-dev \
     gcc \
     make \
-    libstdc++-6-dev \
+    libstdc++6-dev \
     libssl-dev \
     libmariadb3 \
     libmariadbd-dev \
