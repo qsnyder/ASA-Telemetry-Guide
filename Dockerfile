@@ -2,7 +2,7 @@ FROM debian:stable-slim
 
 MAINTAINER Quinn Snyder <qsnyder@cisco.com>
 
-EXPOSE 179
+EXPOSE 2055
 
 RUN apt-get update && apt-get install -y \
     build-essential \
