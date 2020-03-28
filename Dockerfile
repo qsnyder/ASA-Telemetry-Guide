@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     libjansson-dev \
     gcc \
     make \
-    libstdc++6-dev \
+    libstdc++6 \
     libssl-dev \
     libmariadb3 \
     libmariadbd-dev \
@@ -34,7 +34,7 @@ RUN mkdir /etc/pmacct
 
 RUN cd pmacct-master && \
     ./autogen.sh && \
-    ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --enable-rabbitmq --enable-ipv6 --enable-l2 --enable-debug --enable-plabel --enable-64bit --enable-threads --enable-jansson \
+    ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --enable-rabbitmq --enable-ipv6 --enable-l2 --enable-debug --enable-plabel --enable-64bit --enable-threads --enable-jansson && \
     make && \
     make install
 
