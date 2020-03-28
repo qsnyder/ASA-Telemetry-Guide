@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     make \
     libstdc++-6-dev \
     libssl-dev \
-    libmariadbclient18 \
+    libmariadb3 \
     libmariadbd-dev \
     librabbitmq-dev \
     librdkafka-dev \
@@ -34,7 +34,7 @@ RUN mkdir /etc/pmacct
 
 RUN cd pmacct-master && \
     ./autogen.sh && \
-    ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --enable-rabbitmq --enable-mysql --enable-ipv6 --enable-l2 --enable-debug --enable-plabel --enable-64bit --enable-threads --enable-jansson \
+    ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --enable-rabbitmq --enable-ipv6 --enable-l2 --enable-debug --enable-plabel --enable-64bit --enable-threads --enable-jansson \
     make && \
     make install
 
